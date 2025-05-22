@@ -1,0 +1,7 @@
+service: "bentoml_service_advanced:IrisClassifier"
+labels:
+  owner: "cdchushig"
+python:
+  packages:
+    - scikit-learn
+    - mlflow
