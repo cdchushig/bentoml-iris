@@ -116,7 +116,5 @@ bentoml deployment update --bento iris_classifier:mmd2rarxb6fexe65 ${DEPLOYMENT_
 bentoml containerize iris_classifier:mmd2rarxb6fexe65
 ```
 
- 
-
 * Push to BentoCloud with `bentoml push`:
     $ bentoml push iris_classifier:mmd2rarxb6fexe65 
