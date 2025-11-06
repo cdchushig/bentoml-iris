@@ -6,8 +6,8 @@ import random
 import numpy as np
 
 CONCURRENCY = 20        # Number of threads (concurrent requests)
-TOTAL_REQUESTS = 10     # Total number of requests to send
-client = bentoml.SyncHTTPClient("http://localhost:3000")
+TOTAL_REQUESTS = 1000     # Total number of requests to send
+client = bentoml.SyncHTTPClient("http://localhost:3002")
 
 from sklearn.datasets import load_iris
 iris = load_iris()

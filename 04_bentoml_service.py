@@ -4,8 +4,7 @@ import numpy as np
 from bentoml.models import BentoModel
 
 # Define the runtime environment for your Bento
-demo_image = bentoml.images.PythonImage(python_version="3.11") \
-    .python_packages("mlflow", "scikit-learn")
+demo_image = bentoml.images.PythonImage(python_version="3.11").python_packages("mlflow", "scikit-learn")
 
 target_names = ['setosa', 'versicolor', 'virginica']
 
@@ -16,7 +15,7 @@ target_names = ['setosa', 'versicolor', 'virginica']
 )
 class IrisClassifier:
     # Declare the model as a class attribute
-    bento_model = BentoModel("iris:latest")
+    bento_model = BentoModel("iris_nov:latest")
 
     def __init__(self):
         self.model = bentoml.mlflow.load_model(self.bento_model)

@@ -2,7 +2,7 @@ import numpy as np
 import bentoml
 
 # Load the latest version of iris model:
-iris_model = bentoml.mlflow.load_model("iris:latest")
+iris_model = bentoml.mlflow.load_model("iris_nov:latest")
 
 # Alternatively, load the model by specifying the model tag
 # iris_model = bentoml.mlflow.load_model("iris:hu5d7xxs3oxmnuqj")

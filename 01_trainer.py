@@ -1,11 +1,11 @@
+import pandas as pd
+from datetime import date
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import mlflow
 from mlflow.models import infer_signature
-from datetime import date
-import pandas as pd
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Load the Iris dataset
 X, y = datasets.load_iris(return_X_y=True)
@@ -50,7 +50,7 @@ with mlflow.start_run():
     print('acc: ', accuracy)
 
     # Set a tag that we can use to remind ourselves what this run was for
-    mlflow.set_tag("Training Info", "Basic LR model for iris data 2")
+    mlflow.set_tag("Training Info", "Basic LR model for iris nov 2025")
 
     # Infer the model signature
     signature = infer_signature(X_train, lr.predict(X_train))
@@ -63,4 +63,5 @@ with mlflow.start_run():
         input_example=X_train,
         registered_model_name="iris_demo_2",
     )
-    model_uri = mlflow.get_artifact_uri("iris_model_2")
+    model_uri = mlflow.get_artifact_uri("iris_model_nov_2025")
+    print(model_uri)
