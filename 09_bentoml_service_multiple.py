@@ -12,7 +12,7 @@ from common import MyInputParams, my_image
     traffic={"timeout": 10},
 )
 class IrisClassifier:
-    bento_model_1 = BentoModel("iris_nov:k6geywf23gbk5o6")
+    bento_model_1 = BentoModel("iris_nov_10:nd46dyf6kkbzr5o")
     bento_model_2 = BentoModel("iris_nov:k6geywf23gbk5o6")
 
     def __init__(self):

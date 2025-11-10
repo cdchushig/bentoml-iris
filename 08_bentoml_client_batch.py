@@ -4,12 +4,12 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 import random
 import numpy as np
+from sklearn.datasets import load_iris
 
 CONCURRENCY = 20        # Number of threads (concurrent requests)
-TOTAL_REQUESTS = 1000     # Total number of requests to send
+TOTAL_REQUESTS = 5000     # Total number of requests to send
 client = bentoml.SyncHTTPClient("http://localhost:3002")
 
-from sklearn.datasets import load_iris
 iris = load_iris()
 data_samples = iris.data.tolist()
 payloads = [random.choice(data_samples) for _ in range(TOTAL_REQUESTS)]

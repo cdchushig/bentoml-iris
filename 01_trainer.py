@@ -31,6 +31,9 @@ print('Model trained')
 # Predict on the test set
 y_pred = lr.predict(X_test)
 
+# Predictions of the model
+print(y_pred)
+
 # Calculate metrics
 accuracy = accuracy_score(y_test, y_pred)
 print(accuracy)

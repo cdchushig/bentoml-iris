@@ -15,7 +15,7 @@ target_names = ['setosa', 'versicolor', 'virginica']
 )
 class IrisClassifier:
     # Declare the model as a class attribute
-    bento_model = BentoModel("iris_nov:latest")
+    bento_model = BentoModel("iris_nov_10:latest")
 
     def __init__(self):
         self.model = bentoml.mlflow.load_model(self.bento_model)

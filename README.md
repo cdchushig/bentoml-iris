@@ -11,6 +11,16 @@ https://www.bentoml.com/
 
 ### Getting ready
 
+Create Python environment using virtualenv:
+```shell
+virtualenv -p python3.10 myvenv310
+```
+
+Create Python environment using conda:
+```shell
+conda create --name myvenv310 python=3.10
+```
+
 To install Python libraries:
 ```shell
 pip install bentoml mlflow scikit-learn
@@ -94,29 +104,26 @@ curl localhost:3000/docs.json
 
 To execute a server with batching requests:
 ```shell
-bentoml serve bentoml_service_advanced.py:IrisClassifier --port=3002
+bentoml serve 07_bentoml_service_advanced.py:IrisClassifier --port=3002
 ```
 
 To execute two endpoints and an ensemble prediction:
 ```shell
-bentoml serve bentoml_service_multiple.py:IrisClassifier --port=3003
+bentoml serve 09_bentoml_service_multiple.py:IrisClassifier --port=3003
 ```
 
 ### Deploying to Production
 
-BentoML provides multiple options for production deployment:
-
 Containerization: Build an OCI-compliant image for your ML service for deployment on any container platform:
 ```shell
 bentoml build
-bentoml containerize iris_classifier:latest
 ```
 
-Next steps: 
+BentoML provides multiple options for production deployment. Next steps: 
 
 * Deploy to BentoCloud:
 ```shell
-bentoml deploy iris_classifier:mmd2rarxb6fexe65 -n ${DEPLOYMENT_NAME}
+bentoml deploy iris_classifier:nd46dyf6kkbzr5oe -n ${DEPLOYMENT_NAME}
 ```
 
 * Update an existing deployment on BentoCloud:

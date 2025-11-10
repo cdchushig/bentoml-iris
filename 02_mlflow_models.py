@@ -1,7 +1,7 @@
 import pandas as pd
 import mlflow
 
-model_uri = 'runs:/6b9db8fe70b04428a9e8fc0a9b8b260d/iris_model'
+model_uri = 'runs:/5abcf4be209a4a9b90e599a45d365c8b/iris_model'
 
 pyfunc_model = mlflow.pyfunc.load_model(model_uri)
 input_data = pyfunc_model.input_example
