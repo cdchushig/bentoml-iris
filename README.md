@@ -41,6 +41,28 @@ To start MLflow tracking server:
 mlflow server --host 127.0.0.1 --port 8080
 ```
 
+### Run docker
+
+Construir la imagen Docker
+```shell
+docker build -t mlflow-bento:latest .
+```
+
+Ejecuta el contenedor con acceso interactivo y un volumen local (para persistir datos):
+```shell
+docker run -it --name mlflow_bento \
+  -p 5000:5000 -p 3000:3000 -p 8888:8888 \
+  -v $(pwd):/app \
+  mlflow-bento:latest
+```
+
+Esto te dejará dentro de la consola del contenedor (/bin/bash), donde puedes:
+```shell
+python my_script.py
+mlflow ui --host 0.0.0.0
+bentoml serve service:svc --host 0.0.0.0
+```
+
 ### Basic commands for bentoml
 
 To serve the model using the BentoML CLI:
